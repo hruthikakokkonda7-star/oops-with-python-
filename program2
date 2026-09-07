@@ -1,10 +1,8 @@
 class Student:
     def name(self):
         print("Anitha")
-
     def age(self):
         print(18)
-
     def course(self):
         print("B.Tech")
 s1 = Student()
