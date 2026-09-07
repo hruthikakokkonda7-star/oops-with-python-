@@ -7,7 +7,6 @@ class Student:
 
     def course(self):
         print("B.Tech")
-
 s1 = Student()
 s1.name()
 s1.age()
