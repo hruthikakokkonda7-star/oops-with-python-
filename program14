@@ -1,20 +1,24 @@
 class BankAccount:
-   accHoldername="Deepak"
-   Accno=1234567
-   Balance=15000
+    def __init__(self, account_holder, account_number, balance=0):
+        self.account_holder = account_holder
+        self.account_number = account_number
+        self.balance = balance
 
-   def deposit(self,money):
-       int(input("Enter money: "))
-       money=money+self.Balance
-       print(money)
-       
-   def withdrawl(self,cash):
-       cash = int(input())
-       print(cash)
-       
-   def display_balance(self):
-       print(self.Balance)
-b=BankAccount()
-print(b.accHoldername)
-print(b.Accno)
-print(b.Balance)
+    def deposit(self, amount):
+        self.balance += amount
+        print("Deposited:", amount)
+
+    def withdraw(self, amount):
+        if amount <= self.balance:
+            self.balance -= amount
+            print("Withdrawn:", amount)
+        else:
+            print("Insufficient balance! Withdrawal not allowed.")
+
+    def display_balance(self):
+        print("Balance:", self.balance)
+account = BankAccount("John", "12345", 1000)
+account.deposit(500)
+account.withdraw(1200)
+account.withdraw(500)
+account.display_balance()
